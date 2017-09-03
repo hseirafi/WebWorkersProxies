@@ -1,0 +1,49 @@
+<!DOCTYPE ht
+<html>
+<head>
+    <style>
+        
+        body {
+          background: #fcfcfa;
+        }
+        
+        canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        
+        .blur {
+          -webkit-filter: blur(6px);
+          filter: blur(6px);
+        }
+        
+        </style>
+        
+    <script src="web-worker-proxies.js"></script>
+</head>
+<body>
+
+  
+
+
+
+
+
+    <a id="show-me" href="javascript:void(0);" >Show Me</a>
+  
+  <script>
+  function startWebWorker() {
+    calculator = new Worker('/calculator.js').proxy()
+    calculator('add')({x:3,y:2}, function (err, result) {
+                  console.log(result); 
+    })
+  }
+document.getElementById('show-me').addEventListener('click',function(){
+  startWebWorker()
+});
+
+  </script>
+
+</body>
+</html> 
