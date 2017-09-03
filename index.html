@@ -23,15 +23,7 @@
     <script src="web-worker-proxies.js"></script>
 </head>
 <body>
-
-  
-
-
-
-
-
     <a id="show-me" href="javascript:void(0);" >Show Me</a>
-  
   <script>
   function startWebWorker() {
     calculator = new Worker('/calculator.js').proxy()
@@ -42,8 +34,6 @@
 document.getElementById('show-me').addEventListener('click',function(){
   startWebWorker()
 });
-
-  </script>
-
+</script>
 </body>
 </html> 
